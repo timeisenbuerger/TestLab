@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject car;
-    public CarController carController;
+    private GameObject car;
+    private CarController carController;
     
     void Start()
     {
         car = GameObject.FindGameObjectWithTag("Player");
         carController = car.GetComponentInChildren<CarController>();
     }
+
+    public GameObject Car => car;
+
+    public CarController CarController => carController;
 }

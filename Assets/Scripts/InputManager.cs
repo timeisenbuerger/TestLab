@@ -8,7 +8,8 @@ public class InputManager : MonoBehaviour
     
     public float horizontalInput;
     public float verticalInput;
-    public bool isBreaking;
+    public bool isBraking;
+    public bool isDrifting;
     
     
     void FixedUpdate()
@@ -20,7 +21,8 @@ public class InputManager : MonoBehaviour
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
-        isBreaking = Input.GetKey(KeyCode.Space);
+        isBraking = Input.GetKey(KeyCode.LeftShift);
+        isDrifting = Input.GetKey(KeyCode.Space);
     }
     
     
