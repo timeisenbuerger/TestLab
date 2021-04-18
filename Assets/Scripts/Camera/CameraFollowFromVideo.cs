@@ -34,7 +34,7 @@ public class CameraFollowFromVideo : MonoBehaviour
 
     private void Follow()
     {
-        speed = Mathf.Lerp(speed, _playerManager.CarController.speedInKmH / 2, Time.deltaTime);
+        speed = Mathf.Lerp(speed, _playerManager.CarController.CarProperties.CurrentSpeedInKmH / 2, Time.deltaTime);
         
         gameObject.transform.position = Vector3.Lerp(transform.position, cameraConstraint.transform.position, Time.deltaTime * speed);
         gameObject.transform.LookAt(cameraLookAt.gameObject.transform.position);

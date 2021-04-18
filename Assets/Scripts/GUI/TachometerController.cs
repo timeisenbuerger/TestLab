@@ -7,7 +7,7 @@ using UnityEngine;
 public class TachometerController : MonoBehaviour
 {
     [SerializeField] private PlayerManager _playerManager;
-    [SerializeField] private TMPro.TextMeshProUGUI _textMeshPro;
+    [SerializeField] private TextMeshProUGUI _textMeshPro;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class TachometerController : MonoBehaviour
 
     void Update()
     {
-        double speed = Math.Round(_playerManager.CarController.speedInKmH, 0);
+        double speed = Math.Round(_playerManager.CarController.CarProperties.CurrentSpeedInKmH, 0);
         _textMeshPro.text = $"{speed} km/h";
     }
 }
